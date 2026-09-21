@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>h1sCloude — IT Services & CS2</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- canvas для частиц -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- курсор -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- навигация -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-bracket">[</span>h1sCloude<span class="nav__logo-bracket">]</span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#hero" class="nav__link">Home</a></li>
+      <li><a href="#services" class="nav__link">IT Services</a></li>
+      <li><a href="#cheats" class="nav__link">CS2 Cheats</a></li>
+      <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+      <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__content">
+      <div class="hero__eyebrow" id="hero-eyebrow">
+        <span class="hero__dot"></span>
+        <span>Available for projects</span>
+      </div>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-line" data-text="h1s">h1s</span><span class="hero__title-accent">Cloude</span>
+      </h1>
+      <p class="hero__subtitle" id="hero-subtitle">
+        Разработка IT-решений & эксклюзивные инструменты для CS2
+      </p>
+      <div class="hero__tags" id="hero-tags">
+        <span class="tag">Web Dev</span>
+        <span class="tag">Bots & Scripts</span>
+        <span class="tag">CS2 Software</span>
+        <span class="tag">Security</span>
+      </div>
+      <div class="hero__cta" id="hero-cta">
+        <a href="#services" class="btn btn--primary">Смотреть услуги</a>
+        <a href="#contact" class="btn btn--ghost">Написать</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" id="hero-scroll">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- stats bar -->
+  <section class="stats" id="stats">
+    <div class="stats__inner">
+      <div class="stat-item">
+        <span class="stat-item__num" data-target="47">0</span>
+        <span class="stat-item__label">Проектов</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__num" data-target="3">0</span>
+        <span class="stat-item__label">Лет опыта</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__num" data-target="12">0</span>
+        <span class="stat-item__label">CS2 продуктов</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__num" data-target="99">0</span>
+        <span class="stat-item__label">% Undetected</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- вкладки -->
+  <section class="tabs-section" id="services">
+    <div class="container">
+      <div class="tabs-header">
+        <button class="tab-btn tab-btn--active" data-tab="it">
+          <span class="tab-btn__icon">⚡</span> IT Услуги
+        </button>
+        <button class="tab-btn" data-tab="cs2">
+          <span class="tab-btn__icon">🎯</span> CS2 Читы
+        </button>
+        <button class="tab-btn" data-tab="portfolio">
+          <span class="tab-btn__icon">📁</span> Портфолио
+        </button>
+      </div>
+
+      <!-- IT -->
+      <div class="tab-content tab-content--active" id="tab-it">
+        <div class="section-header">
+          <span class="section-eyebrow">// services</span>
+          <h2 class="section-title">IT Разработка</h2>
+          <p class="section-desc">Полный цикл разработки — от идеи до деплоя</p>
+        </div>
+        <div class="cards-grid">
+          <div class="card card--glow" data-tilt>
+            <div class="card__icon">🌐</div>
+            <h3 class="card__title">Веб-разработка</h3>
+            <p class="card__desc">Лендинги, SPA, fullstack приложения. React, Next.js, Node.js.</p>
+            <div class="card__tags">
+              <span>React</span><span>Next.js</span><span>Node</span>
+            </div>
+            <div class="card__price">от 5 000 ₽</div>
+          </div>
+          <div class="card card--glow" data-tilt>
+            <div class="card__icon">🤖</div>
+            <h3 class="card__title">Боты & Автоматизация</h3>
+            <p class="card__desc">Telegram-боты, Discord-боты, парсеры, скрипты автоматизации.</p>
+            <div class="card__tags">
+              <span>Python</span><span>Telegram API</span><span>Selenium</span>
+            </div>
+            <div class="card__price">от 3 000 ₽</div>
+          </div>
+          <div class="card card--glow" data-tilt>
+            <div class="card__icon">🔒</div>
+            <h3 class="card__title">Security & Pentest</h3>
+            <p class="card__desc">Аудит безопасности, пентест веб-приложений, написание эксплоитов.</p>
+            <div class="card__tags">
+              <span>Burp Suite</span><span>Python</span><span>Metasploit</span>
+            </div>
+            <div class="card__price">от 10 000 ₽</div>
+          </div>
+          <div class="card card--glow" data-tilt>
+            <div class="card__icon">📱</div>
+            <h3 class="card__title">Мобильные приложения</h3>
+            <p class="card__desc">Кроссплатформенная разработка под iOS и Android.</p>
+            <div class="card__tags">
+              <span>React Native</span><span>Flutter</span>
+            </div>
+            <div class="card__price">от 15 000 ₽</div>
+          </div>
+          <div class="card card--glow" data-tilt>
+            <div class="card__icon">🗄️</div>
+            <h3 class="card__title">API & Backend</h3>
+            <p class="card__desc">REST/GraphQL API, микросервисы, базы данных, деплой.</p>
+            <div class="card__tags">
+              <span>FastAPI</span><span>PostgreSQL</span><span>Docker</span>
+            </div>
+            <div class="card__price">от 8 000 ₽</div>
+          </div>
+          <div class="card card--accent" data-tilt>
+            <div class="card__icon">✨</div>
+            <h3 class="card__title">Кастомный проект</h3>
+            <p class="card__desc">Опиши задачу — реализую. Любая сложность, любые технологии.</p>
+            <div class="card__tags">
+              <span>Any Stack</span><span>Custom</span>
+            </div>
+            <div class="card__price">обсуждаемо</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS2 -->
+      <div class="tab-content" id="tab-cs2">
+        <div class="section-header">
+          <span class="section-eyebrow">// software</span>
+          <h2 class="section-title">CS2 Software</h2>
+          <p class="section-desc">Актуальные инструменты для Counter-Strike 2</p>
+        </div>
+        <div class="cs2-warning">
+          <span>⚠️</span>
+          <span>Только для приватного использования. Не несу ответственности за бан аккаунта.</span>
+        </div>
+        <div class="cards-grid">
+          <div class="card card--cs2" data-tilt>
+            <div class="card__header">
+              <div class="card__icon">🎯</div>
+              <div class="card__status card__status--safe">SAFE</div>
+            </div>
+            <h3 class="card__title">Aimbot Pro</h3>
+            <p class="card__desc">Плавный aimbot на основе движения мыши. Настраиваемый FOV, smooth, RCS.</p>
+            <ul class="card__features">
+              <li>✓ FOV настройка</li>
+              <li>✓ Smooth движение</li>
+              <li>✓ Recoil Control</li>
+              <li>✓ Hotkey система</li>
+            </ul>
+            <div class="card__price">1 500 ₽ / мес</div>
+          </div>
+          <div class="card card--cs2" data-tilt>
+            <div class="card__header">
+              <div class="card__icon">👁️</div>
+              <div class="card__status card__status--safe">SAFE</div>
+            </div>
+            <h3 class="card__title">Wallhack ESP</h3>
+            <p class="card__desc">ESP через кастомный оверлей. Скелеты, боксы, здоровье, имена, дистанция.</p>
+            <ul class="card__features">
+              <li>✓ Skeleton ESP</li>
+              <li>✓ Box ESP</li>
+              <li>✓ Health bar</li>
+              <li>✓ Bomb timer</li>
+            </ul>
+            <div class="card__price">1 200 ₽ / мес</div>
+          </div>
+          <div class="card card--cs2" data-tilt>
+            <div class="card__header">
+              <div class="card__icon">🔫</div>
+              <div class="card__status card__status--safe">SAFE</div>
+            </div>
+            <h3 class="card__title">Triggerbot</h3>
+            <p class="card__desc">Автоматический выстрел при наведении на врага. Кастомная задержка реакции.</p>
+            <ul class="card__features">
+              <li>✓ Delay настройка</li>
+              <li>✓ Team check</li>
+              <li>✓ Pixel-based</li>
+              <li>✓ Работает в VAC</li>
+            </ul>
+            <div class="card__price">800 ₽ / мес</div>
+          </div>
+          <div class="card card--cs2 card--bundle" data-tilt>
+            <div class="card__header">
+              <div class="card__icon">💎</div>
+              <div class="card__status card__status--vip">VIP</div>
+            </div>
+            <h3 class="card__title">Full Bundle</h3>
+            <p class="card__desc">Всё включено: Aimbot + ESP + Trigger + Misc. Приоритетная поддержка.</p>
+            <ul class="card__features">
+              <li>✓ Всё из выше</li>
+              <li>✓ Radar Hack</li>
+              <li>✓ Skinchanger</li>
+              <li>✓ 24/7 поддержка</li>
+            </ul>
+            <div class="card__price">2 500 ₽ / мес</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- портфолио -->
+      <div class="tab-content" id="tab-portfolio">
+        <div class="section-header">
+          <span class="section-eyebrow">// portfolio</span>
+          <h2 class="section-title">Работы</h2>
+          <p class="section-desc">Реализованные проекты</p>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="web">
+            <div class="portfolio-item__img portfolio-item__img--1"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">Web</span>
+              <h3>E-commerce платформа</h3>
+              <p>React + Node.js + PostgreSQL</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="bot">
+            <div class="portfolio-item__img portfolio-item__img--2"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">Bot</span>
+              <h3>Telegram Shop Bot</h3>
+              <p>Python + aiogram + SQLite</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="security">
+            <div class="portfolio-item__img portfolio-item__img--3"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">Security</span>
+              <h3>Pentest Report Tool</h3>
+              <p>Python + FastAPI</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="cs2">
+            <div class="portfolio-item__img portfolio-item__img--4"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">CS2</span>
+              <h3>External Overlay</h3>
+              <p>C++ + DirectX</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="web">
+            <div class="portfolio-item__img portfolio-item__img--5"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">Web</span>
+              <h3>SaaS Dashboard</h3>
+              <p>Next.js + Tailwind + Prisma</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="bot">
+            <div class="portfolio-item__img portfolio-item__img--6"></div>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__cat">Bot</span>
+              <h3>Discord Moderation Bot</h3>
+              <p>Python + discord.py</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- контакт -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">// contact</span>
+        <h2 class="section-title">Связаться</h2>
+        <p class="section-desc">Опиши задачу — отвечу быстро</p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__link-item">
+            <span class="contact__link-icon">✈️</span>
+            <div>
+              <span class="contact__link-label">Telegram</span>
+              <a href="https://t.me/h1sCloude" class="contact__link" target="_blank">@h1sCloude</a>
+            </div>
+          </div>
+          <div class="contact__link-item">
+            <span class="contact__link-icon">🎮</span>
+            <div>
+              <span class="contact__link-label">Discord</span>
+              <a href="#" class="contact__link">h1sCloude#0000</a>
+            </div>
+          </div>
+          <div class="contact__link-item">
+            <span class="contact__link-icon">💻</span>
+            <div>
+              <span class="contact__link-label">GitHub</span>
+              <a href="#" class="contact__link">github.com/h1sCloude</a>
+            </div>
+          </div>
+          <div class="contact__response">
+            <span class="contact__response-dot"></span>
+            Среднее время ответа: <strong>&lt; 2 часов</strong>
+          </div>
+        </div>
+        <form class="contact__form" id="contact-form">
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="Имя" required />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="Telegram / Discord" required />
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" disabled selected>Тип услуги</option>
+              <option value="web">Веб-разработка</option>
+              <option value="bot">Бот / Скрипт</option>
+              <option value="security">Security / Pentest</option>
+              <option value="cs2">CS2 Software</option>
+              <option value="custom">Кастомный проект</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-input form-textarea" placeholder="Опиши задачу..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Отправить запрос</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo"><span class="hero__logo-bracket">[</span>h1sCloude<span class="hero__logo-bracket">]</span></span>
+      <span class="footer__copy">© 2025 h1sCloude. All rights reserved.</span>
+      <span class="footer__stack">Built with ⚡ & caffeine</span>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
